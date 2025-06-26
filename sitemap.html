@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa del Sitio - MENTIN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #2e7d32;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #2e7d32;
+    }
+
+    .node {
+      background-color: #c2e8bf;
+      color: #000;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .sitemap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .level {
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      margin-top: 5rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .sublevel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .connector {
+      position: absolute;
+      height: 60px;
+      width: 2px;
+      background-color: #2e7d32;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .horizontal-line {
+      position: absolute;
+      top: 120px;
+      height: 2px;
+      background-color: #2e7d32;
+      width: 60%;
+      left: 20%;
+    }
+
+    .vertical-line {
+      position: absolute;
+      width: 2px;
+      background-color: #2e7d32;
+      height: 40px;
+      top: 122px;
+    }
+
+    .v1 { left: 30%; }
+    .v2 { left: 50%; }
+    .v3 { left: 70%; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-volver {
+      margin-top: 3rem;
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .btn-volver:hover {
+      background-color: #1b5e20;
+    }
+
+    @media (max-width: 768px) {
+      .level {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+      }
+      .horizontal-line, .vertical-line {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapa del Sitio - MENTIN</h1>
+  <div class="sitemap">
+    <div class="node" id="mentin">MENTIN</div>
+    <div class="connector"></div>
+    <div class="horizontal-line"></div>
+    <div class="vertical-line v1"></div>
+    <div class="vertical-line v2"></div>
+    <div class="vertical-line v3"></div>
+
+    <div class="level">
+      <div class="sublevel">
+        <div class="node"><a href="index.html#inicio">Inicio</a></div>
+        <div class="node">Logo y Título</div>
+        <div class="node">¿Sabías que?</div>
+      </div>
+
+      <div class="sublevel">
+        <div class="node"><a href="index.html#productos">Productos</a></div>
+        <div class="node">Pasta de menta</div>
+        <div class="node">Pasta de aloe vera</div>
+        <div class="node">Pasta mixta</div>
+      </div>
+
+      <div class="sublevel">
+        <div class="node"><a href="index.html#recomendaciones">Recomendaciones</a></div>
+        <div class="node">Consejos de cepillado</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn-volver">Volver a la página principal</a>
+</body>
+</html>

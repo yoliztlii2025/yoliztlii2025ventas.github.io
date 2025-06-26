@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooth-ies - Cuidado Dental Natural (con imagenes)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+            margin: 0;
+            padding: 0;
+            background-color: #F0F2F5; /* Un gris más suave */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Contenedores de contenido principal */
+        .page-content, section {
+            padding: 40px 20px;
+            margin: 20px auto; /* Márgenes para separar secciones visualmente */
+            max-width: 1100px;
+            background-color: #ffffff;
+            border-radius: 12px; /* Bordes más redondeados */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+            text-align: center;
+        }
+        .page-content h2, section h2 {
+            color: #1A202C; /* Color más oscuro para títulos */
+            font-size: 2.5em; /* Títulos más grandes */
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .page-content h2::after, section h2::after { /* Línea decorativa bajo los títulos */
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #007bff; /* Azul vibrante */
+            border-radius: 2px;
+        }
+
+        /* --- Header y Navegación --- */
+        .top-bar {
+            background-color: #1A202C; /* Azul oscuro casi negro */
+            color: white;
+            padding: 8px 25px;
+            text-align: right;
+            font-size: 0.85em;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .top-bar a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar a:hover {
+            color: #FFD700; /* Dorado para hover */
+            text-decoration: underline;
+        }
+
+        .main-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            background-color: #2D3748; /* Azul oscuro más claro */
+            color: white;
+        }
+        .main-header-content .logo {
+            font-family: 'Georgia', serif; /* Fuente más elegante para el logo */
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #FFB347; /* Naranja más suave */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
+            display: flex;
+            max-width: 500px;
+            border-radius: 8px;
+            overflow: hidden; /* Para que el borde redondeado se aplique al input y al botón */
+            border: 2px solid #3A4557; /* Borde sutil */
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: none;
+            outline: none; /* Eliminar el contorno al enfocar */
+            font-size: 1em;
+            background-color: #FDFDFD; /* Fondo claro para el input */
+            color: #333;
+        }
+        .search-bar button {
+            background-color: #FFD700; /* Dorado brillante */
+            color: #1A202C;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #FFC04D;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 25px;
+            font-size: 1.6em;
+        }
+        .header-icons a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .header-icons a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #3A4557; /* Azul más oscuro para la navegación */
+            padding: 0.8em 25px;
+            display: flex;
+            justify-content: center; /* Centrar los elementos de navegación */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: 500; /* Grosor de fuente medio */
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #4A5568; /* Un gris azulado más claro para hover */
+            color: #FFD700;
+        }
+
+        /* --- Hero Section (Nueva) --- */
+        .hero-section {
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); /* Degradado verde vibrante */
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 1100px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .hero-section h1 {
+            font-size: 3.8em; /* Título principal más grande */
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+        }
+        .hero-section p {
+            font-size: 1.5em; /* Texto descriptivo más grande */
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        .hero-button {
+            display: inline-block;
+            background-color: #FFD700; /* Dorado para el botón principal */
+            color: #1A202C;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 30px; /* Botón de píldora */
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .hero-button:hover {
+            background-color: #FFC04D;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Botones de navegación en la sección principal (los que te llevan a cada parte) */
+        .nav-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Más espacio entre botones */
+            margin-top: 40px;
+        }
+        .nav-button {
+            display: block;
+            background-color: #007bff; /* Azul primario */
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 220px; /* Ancho mínimo para los botones */
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Estilos para los "items" de características y quiénes somos */
+        .feature-item {
+            background-color: #fefefe; /* Blanco más puro para el contenido */
+            margin-bottom: 30px; /* Más espacio */
+            padding: 30px; /* Más padding */
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Sombra más suave */
+            text-align: left;
+            border-left: 6px solid #4CAF50; /* Borde verde distintivo */
+            transition: transform 0.3s ease; /* Transición para hover */
+        }
+        .feature-item:hover {
+            transform: translateY(-5px); /* Efecto de "levantar" al pasar el mouse */
+        }
+        .feature-item h3 {
+            color: #28a745; /* Verde para títulos de características */
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 8px;
+            display: flex; /* Para alinear el icono con el texto */
+            align-items: center;
+            gap: 10px; /* Espacio entre icono y texto */
+        }
+        .feature-item h3 i {
+            color: #28a745;
+            font-size: 1.2em;
+        }
+        .feature-item p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #444;
+        }
+        .feature-item p strong {
+            color: #1A202C;
+        }
+
+        /* --- Sección de Productos (específico) --- */
+        .product-detail-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* Más espacio */
+            padding: 50px; /* Más padding */
+            background-color: #fdfdfd;
+            border-radius: 15px; /* Bordes más redondeados */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* Sombra más fuerte */
+            border: 1px solid #eee;
+        }
+        /* No hay img aquí, pero se mantiene para referencia si se desea añadir */
+        .product-info {
+            text-align: center;
+            max-width: 700px; /* Ancho para la información del producto */
+        }
+        .product-info h3 {
+            font-size: 3em; /* Título del producto más grande */
+            color: #007bff; /* Azul para el título del producto */
+            margin-bottom: 20px;
+        }
+        .product-info .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .product-info p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify; /* Justificar el texto para mejor lectura */
+        }
+        .product-info ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left; /* Alinear lista a la izquierda */
+        }
+        .product-info ul li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #555;
+            position: relative;
+            padding-left: 30px;
+        }
+        .product-info ul li::before { /* Icono de check para la lista */
+            content: "\f00c"; /* Código de Font Awesome para el check */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #28a745; /* Verde para el check */
+        }
+        .product-price {
+            font-size: 3.5em; /* Precio más grande y llamativo */
+            font-weight: bold;
+            color: #DC3545; /* Rojo vibrante para el precio */
+            margin-bottom: 30px;
+            display: block; /* Para que ocupe su propia línea */
+        }
+        .add-to-cart-large {
+            background-color: #FFC107; /* Amarillo más intenso */
+            color: #1A202C;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 35px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            width: 80%;
+            max-width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .add-to-cart-large:hover {
+            background-color: #E0A800;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Sección de Reseñas (específico) --- */
+        .review {
+            background-color: #fefefe;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid #FFC107; /* Borde amarillo para reseñas */
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .review:hover {
+            transform: translateY(-5px);
+        }
+        .review p:first-child { /* Estrellas */
+            color: #FFC107;
+            font-size: 1.6em; /* Estrellas más grandes */
+            margin-bottom: 10px;
+        }
+        .review blockquote {
+            font-style: italic;
+            margin: 15px 0;
+            padding: 0 25px;
+            font-size: 1.15em;
+            line-height: 1.7;
+            border-left: 4px solid #eee; /* Borde más grueso para blockquote */
+            color: #444;
+        }
+        .review footer {
+            text-align: right;
+            font-style: normal;
+            font-weight: bold;
+            color: #007bff; /* Azul para el nombre del reseñador */
+            margin-top: 15px;
+            font-size: 1.05em;
+        }
+        .review-summary {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 1.3em;
+            color: #007bff;
+            padding: 20px;
+            background-color: #e6f2ff; /* Fondo azul claro para el resumen */
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #b3d9ff;
+        }
+
+        /* --- Sección de Beneficios (específico) --- */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 40px;
+        }
+        .benefit-item {
+            background-color: #fefefe;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid #007bff; /* Borde azul para beneficios */
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-item strong {
+            font-size: 1.6em; /* Título de beneficio más grande */
+            color: #007bff;
+            display: block;
+            margin-bottom: 12px;
+            display: flex; /* Para alinear icono */
+            align-items: center;
+            gap: 10px;
+        }
+        .benefit-item strong i {
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        .benefit-item p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #444;
+        }
+
+        /* --- Botón "Volver al Inicio" --- */
+        .back-to-top-button {
+            display: inline-block;
+            background-color: #6c757d; /* Gris para el botón de volver */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 30px; /* Espacio superior */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .back-to-top-button:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* --- Footer --- */
+        footer.main-footer {
+            background-color: #1A202C; /* Mismo azul oscuro que la barra superior */
+            color: white;
+            padding: 40px 25px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 5px solid #007bff; /* Borde azul para el footer */
+        }
+        .footer-columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            text-align: left; /* Alinear el texto de las columnas a la izquierda */
+        }
+        .footer-col {
+            margin-bottom: 25px;
+            min-width: 180px; /* Ancho mínimo para las columnas */
+            padding: 0 15px; /* Padding para separar columnas */
+        }
+        .footer-col h3 {
+            color: #FFD700; /* Dorado para títulos del footer */
+            margin-bottom: 18px;
+            font-size: 1.2em;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .footer-col h3::after { /* Línea bajo títulos del footer */
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #FFD700;
+            border-radius: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #B0B9C9; /* Gris más claro para los enlaces del footer */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        footer.main-footer p {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #3A4557;
+            padding-top: 20px;
+            color: #B0B9C9;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 992px) {
+            .hero-section h1 {
+                font-size: 3em;
+            }
+            .hero-section p {
+                font-size: 1.3em;
+            }
+            .hero-button {
+                padding: 15px 35px;
+                font-size: 1.2em;
+            }
+            .product-detail-card {
+                flex-direction: column;
+                gap: 25px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .main-header-content .logo {
+                font-size: 2.2em;
+                margin-bottom: 0;
+            }
+            .search-bar {
+                width: 100%;
+                margin: 0;
+            }
+            .header-icons {
+                width: 100%;
+                justify-content: flex-end;
+                margin-top: 5px;
+            }
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                padding-left: 0;
+            }
+            nav a {
+                margin: 5px;
+                padding: 10px 15px;
+            }
+            .page-content, section {
+                padding: 25px 15px;
+                margin: 15px auto;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .hero-section {
+                padding: 50px 15px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.1em;
+            }
+            .hero-button {
+                font-size: 1.1em;
+                padding: 12px 30px;
+            }
+            .nav-button {
+                width: 90%; /* Ajuste para que los botones de navegación ocupen más espacio en móviles */
+                min-width: unset;
+                padding: 15px 20px;
+            }
+            .feature-item h3, .benefit-item strong {
+                font-size: 1.4em;
+            }
+            .product-info h3 {
+                font-size: 2.2em;
+            }
+            .product-price {
+                font-size: 2.8em;
+            }
+            .add-to-cart-large {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+            .footer-columns {
+                flex-direction: column;
+                align-items: center;
+                text-align: center; /* Centrar texto en columnas de footer en móviles */
+            }
+            .footer-col h3::after { /* Ajuste para línea en títulos de footer en móviles */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <a href="#ayuda"><i class="fas fa-question-circle"></i> Ayuda</a>
+            <a href="#mi-cuenta"><i class="fas fa-user-circle"></i> Mi Cuenta</a>
+        </div>
+        <div class="main-header-content">
+            <div class="logo">
+                Tooth-ies
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos...">
+                <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+            <div class="header-icons">
+                <a href="#carrito" aria-label="Carrito de compras"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#cuenta" aria-label="Mi cuenta"><i class="fas fa-user-alt"></i></a>
+            </div>
+        </div>
+        <nav>
+            <a href="#hero-section"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#quienes-somos-section"><i class="fas fa-users"></i> Qui&eacute;nes Somos</a>
+            <a href="#productos-section"><i class="fas fa-box-open"></i> Productos</a>
+            <a href="#resenas-section"><i class="fas fa-star"></i> Rese&ntilde;as</a>
+            <a href="#caracteristicas-section"><i class="fas fa-flask"></i> Caracter&iacute;sticas</a>
+            <a href="#beneficios-section"><i class="fas fa-leaf"></i> Beneficios</a>
+        </nav>
+    </header>
+
+    <section class="hero-section" id="hero-section">
+        <h1>Tu Sonrisa Natural Empieza Aqu&iacute; con Tooth-ies</h1>
+        <p>Descubre el poder de la naturaleza para un cuidado dental superior. Productos puros, efectivos y amigables con el planeta.</p>
+        <a href="#productos-section" class="hero-button">Explora Nuestros Productos</a>
+    </section>
+
+    <section class="page-content" id="inicio-buttons-section">
+        <h2>Un Viaje Hacia el Bienestar Dental Natural</h2>
+        <p>En Tooth-ies, creemos en la armon&iacute;a entre la salud bucal y la sostenibilidad. Te invitamos a conocer cada aspecto de nuestra pasi&oacute;n.</p>
+        <div class="nav-buttons-container">
+            <a href="#quienes-somos-section" class="nav-button"><i class="fas fa-building"></i> Qui&eacute;nes Somos</a>
+            <a href="#productos-section" class="nav-button"><i class="fas fa-tooth"></i> Nuestros Productos</a>
+            <a href="#resenas-section" class="nav-button"><i class="fas fa-comment-alt"></i> Rese&ntilde;as de Clientes</a>
+            <a href="#caracteristicas-section" class="nav-button"><i class="fas fa-microscope"></i> Ingredientes y Caracter&iacute;sticas</a>
+            <a href="#beneficios-section" class="nav-button"><i class="fas fa-hand-holding-heart"></i> Beneficios de Tooth-ies</a>
+        </div>
+    </section>
+
+    <section class="page-content" id="quienes-somos-section">
+        <h2>Qui&eacute;nes Somos: Nuestra Historia y Compromiso</h2>
+        <div class="feature-item">
+            <h3><i class="fas fa-lightbulb"></i> Nuestra Visi&oacute;n y Valores</h3>
+            <p>
+                En **Tooth-ies**, nuestra creencia fundamental es que una higiene bucal excepcional no debe comprometer la salud ni el bienestar de nuestro planeta. Nos embarcamos en esta aventura con una visi&oacute;n clara: redefinir el cuidado dental, ofreciendo productos que son tan puros como la naturaleza misma. Cada f&oacute;rmula de Tooth-ies es el resultado de una investigaci&oacute;n exhaustiva y un compromiso inquebrantable con la sostenibilidad, la eficacia y la transparencia.
+            </p>
+            <p>
+                Valoramos la simplicidad y el poder de los ingredientes naturales. Evitamos qu&iacute;micos agresivos, colorantes artificiales y conservantes sint&eacute;ticos, eligiendo en su lugar componentes que han sido probados por la naturaleza y la ciencia. Creemos en empoderar a nuestros clientes con el conocimiento sobre lo que ponen en su cuerpo, por eso cada ingrediente en nuestros productos es cuidadosamente seleccionado y explicado.
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-seedling"></i> Nuestro Compromiso con la Sostenibilidad</h3>
+            <p>
+                Desde el inicio, Tooth-ies ha estado impulsada por un profundo respeto por el medio ambiente. Entendemos el impacto que los productos de consumo pueden tener, y por eso nos esforzamos por minimizar nuestra huella ecol&oacute;gica en cada etapa de nuestro proceso. Esto incluye la obtenci&oacute;n &eacute;tica de nuestros ingredientes, la preferencia por empaques reciclables o compostables, y la implementaci&oacute;n de pr&aacute;cticas de producci&oacute;n que conserven los recursos.
+            </p>
+            <p>
+                Nuestros empaques est&aacute;n dise&ntilde;ados pensando en el futuro. Reducimos el uso de pl&aacute;sticos de un solo uso, optando por materiales que pueden ser reutilizados o devueltos a la tierra sin dejar rastro da&ntilde;ino. Cada decisi&oacute;n que tomamos en Tooth-ies es una promesa de un futuro m&aacute;s verde y saludable para todos.
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-heart"></i> Un Viaje Inspirado en la Naturaleza</h3>
+            <p>
+                La idea de Tooth-ies naci&oacute; de una b&uacute;squeda personal por alternativas de higiene dental que fueran verdaderamente naturales y efectivas. Al no encontrar opciones que cumplieran con nuestros est&aacute;ndares, decidimos crear las nuestras. Fue un viaje de experimentaci&oacute;n, aprendizaje y descubrimiento de la sabidur&iacute;a inherente de la naturaleza.
+            </p>
+            <p>
+                Hoy, Tooth-ies es m&aacute;s que una marca; es una comunidad de individuos que eligen conscientemente un camino hacia una vida m&aacute;s saludable y sostenible. Te invitamos a unirte a nosotros en esta misi&oacute;n y experimentar la diferencia que hace el cuidado dental natural. &iexcl;Sonr&iacute;e con confianza, sonr&iacute;e con Tooth-ies!
+            </p>
+        </div>
+        <a href="#hero-section" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al Inicio</a>
+    </section>
+
+    <section class="page-content" id="productos-section">
+        <h2>Nuestro Producto Estrella: Pasta Dental Natural</h2>
+        <div class="product-detail-card">
+            <div class="product-info">
+                <h3>Pasta Dental "Menta Fresca" - 90 ml</h3>
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+    <img src="1.jpg" alt="25 jun 2025 a la(s) 18_21(1)" style="max-width:150px; border-radius: 10px;">
+    <img src="2.jpg" alt="25 jun 2025 a la(s) 18_21(2)" style="max-width:150px; border-radius: 10px;">
+    <img src="3.jpg" alt="25 jun 2025 a la(s) 18_21" style="max-width:150px; border-radius: 10px;">
+</div>
+		<div> 			<img src="https://d6scj24zvfbbo.cloudfront.net/b8175b99feba53770f9ae3fc2c3fa1aa/200000000-840d0840d3/200/depositphotos_145533465-stock-illustration-cartoon-tooth-holding-a-tooth.jpg?ph=4cb3ce0d9e" alt"https://d6scj24zvfbbo.cloudfront.net/b8175b99feba53770f9ae3fc2c3fa1aa/200000000-840d0840d3/200/depositphotos_145533465-stock-illustration-cartoon-tooth-holding-a-tooth.jpg?ph=4cb3ce0d9e" style="max-width:250px; width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+		</div>
+                <p class="subtitle">¡La frescura natural para tu sonrisa!</p>
+                <p>Descubre el secreto para una limpieza profunda y un aliento irresistiblemente fresco con nuestra Pasta Dental "Menta Fresca". Formulada con ingredientes 100% naturales, esta pasta de dientes de 90 ml est&aacute; dise&ntilde;ada para cuidar tus dientes y enc&iacute;as de la manera m&aacute;s suave y efectiva.</p>
+                <p>Nuestra f&oacute;rmula exclusiva combina el poder limpiador de la **arcilla blanca** y el **bicarbonato de sodio**, que trabajan en armon&iacute;a para eliminar la placa, pulir el esmalte y neutralizar los &aacute;cidos. El extracto de **menta natural** no solo proporciona un sabor delicioso y refrescante, sino que tambi&eacute;n ofrece propiedades antis&eacute;pticas para combatir las bacterias causantes del mal aliento.</p>
+                <p><strong>Beneficios clave:</strong></p>
+                <ul>
+                    <li>Limpieza profunda sin abrasivos da&ntilde;inos.</li>
+                    <li>Aliento fresco y duradero.</li>
+                    <li>Protege tus enc&iacute;as de forma natural.</li>
+                    <li>Contribuye a un blanqueamiento suave del esmalte.</li>
+                    <li>Envase eco-consciente para reducir tu huella ambiental.</li>
+                </ul>
+                <p><strong>Presentaci&oacute;n:</strong> Tubo de 90 ml.</p>
+                <span class="product-price">$75 MXN</span>
+                <button class="add-to-cart-large"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+            </div>
+        </div>
+        <a href="#hero-section" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al Inicio</a>
+    </section>
+
+    <section class="page-content" id="resenas-section">
+        <h2>Lo que Nuestros Clientes Dicen de Tooth-ies</h2>
+        <div class="review-summary">
+            <p><strong>Calificaci&oacute;n promedio: <span style="color: #FFC107;">★★★★★</span> (4.8 de 5 estrellas)</strong></p>
+            <p><i class="fas fa-check-circle"></i> Basado en m&aacute;s de 150 rese&ntilde;as verificadas.</p>
+        </div>
+
+        <div class="review">
+            <p>★★★★★</p>
+            <blockquote>"¡Absolutamente increíble! Desde que empecé a usar la pasta de dientes Tooth-ies, mis dientes se sienten más limpios que nunca y mi aliento permanece fresco durante horas. Me encanta saber que estoy usando ingredientes naturales y que no estoy exponiendo mi boca a químicos innecesarios. Es una sensación de frescura que dura todo el día. ¡Definitivamente mi nueva pasta de dientes favorita!"</blockquote>
+            <footer>- Ana G. de Ciudad de M&eacute;xico</footer>
+        </div>
+
+        <div class="review">
+            <p>★★★★★</p>
+            <blockquote>"Siempre fui escéptico con las pastas de dientes naturales, pero Tooth-ies superó todas mis expectativas. La textura es sorprendentemente agradable y el sabor a menta es perfectamente equilibrado, no es para nada abrumador. Después de un par de semanas, noté una diferencia real en la blancura de mis dientes y mis encías se sienten mucho más saludables. La recomiendo sin dudarlo."</blockquote>
+            <footer>- Carlos M. de Guadalajara</footer>
+        </div>
+
+        <div class="review">
+            <p>★★★★☆</p>
+            <blockquote>"Estaba buscando desesperadamente una opción sin flúor y que fuera más amigable con el medio ambiente, y me encontré con Tooth-ies. El producto es excelente, hace una buena espuma y deja una sensación de limpieza duradera. El servicio al cliente también fue excepcional, respondieron todas mis dudas muy rápido. La única razón por la que no le doy cinco estrellas es que me gustaría ver más opciones de sabor en el futuro."</blockquote>
+            <footer>- Sof&iacute;a R. de Monterrey</footer>
+        </div>
+
+        <div class="review">
+            <p>★★★★★</p>
+            <blockquote>"Mis encías siempre han sido muy sensibles, y la mayoría de las pastas de dientes tradicionales me causaban molestias. Con Tooth-ies, he encontrado un alivio increíble. La sensación es suave pero efectiva, y no he tenido ninguna irritación desde que la uso. Me siento mucho más cómoda y confiada con mi sonrisa. Es un producto que realmente cumple lo que promete."</blockquote>
+            <footer>- Laura F. de Canc&uacute;n</footer>
+        </div>
+
+        <div class="review">
+            <p>★★★★★</p>
+            <blockquote>"La experiencia de compra fue sencilla y la entrega rápida. Lo que más me sorprendió fue la sensación de limpieza profunda que deja. Parece que mis dientes están recién pulidos por el dentista. Además, el hecho de que sea una marca comprometida con ingredientes naturales y sostenibles le da un valor añadido. ¡Un imprescindible en mi rutina diaria!"</blockquote>
+            <footer>- Diego P. de Puebla</footer>
+        </div>
+        <a href="#hero-section" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al Inicio</a>
+    </section>
+
+    <section class="page-content" id="caracteristicas-section">
+        <h2>Caracter&iacute;sticas Profundas de Nuestros Ingredientes Naturales</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 40px; color: #555;">En Tooth-ies, cada ingrediente es seleccionado con un prop&oacute;sito claro: ofrecerte el cuidado dental m&aacute;s puro y efectivo. Conoce el poder de la naturaleza en cada uso.</p>
+
+        <div class="feature-item">
+            <h3><i class="fas fa-tint"></i> Agua Destilada: La Base Pura</h3>
+            <p><strong>Pureza Garantizada:</strong> Utilizamos agua destilada como la base fundamental de nuestras formulaciones. A diferencia del agua del grifo, que puede contener minerales, cloro y otras impurezas que podr&iacute;an reaccionar con los ingredientes activos o afectar la estabilidad del producto, el agua destilada es un solvente completamente puro. Esto asegura que cada componente de nuestra pasta dental mantenga su integridad y eficacia, brind&aacute;ndote una experiencia de limpieza consistente y sin contaminantes.</p>
+            <p>Su pureza contribuye a la vida &uacute;til del producto y previene la formaci&oacute;n de dep&oacute;sitos no deseados, garantizando que solo los ingredientes beneficiosos act&uacute;en sobre tus dientes y enc&iacute;as.</p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-mountain"></i> Arcilla Blanca (Caol&iacute;n): Limpieza Suave y Pulido Natural</h3>
+            <p><strong>Limpieza Suave y Pulido:</strong> El Caol&iacute;n, o arcilla blanca, es un mineral natural conocido por sus propiedades suaves pero efectivas. En nuestra pasta dental, act&uacute;a como un abrasivo muy fino que ayuda a limpiar la superficie de los dientes de manera delicada. Su microestructura permite remover la placa bacteriana y las manchas superficiales causadas por el caf&eacute;, t&eacute; o ciertos alimentos, sin causar da&ntilde;o al esmalte dental.</p>
+            <p>Adem&aacute;s de sus propiedades limpiadoras, la arcilla blanca tiene una capacidad natural para absorber toxinas e impurezas, contribuyendo a un ambiente bucal m&aacute;s limpio y desintoxicado. Es ideal incluso para dientes y enc&iacute;as sensibles, proporcionando una sensaci&oacute;n de pulcritud sin agresi&oacute;n.</p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-vial"></i> Bicarbonato de Sodio: Neutralizador y Blanqueador Ecl&eacute;ctico</h3>
+            <p><strong>Neutralizador y Blanqueador:</strong> El bicarbonato de sodio es un ingrediente vers&aacute;til y potent&iacute;simo en el cuidado bucal natural. Su principal funci&oacute;n es neutralizar los &aacute;cidos producidos por las bacterias en la boca, que son la principal causa de las caries y la erosi&oacute;n del esmalte. Al mantener un pH equilibrado, el bicarbonato de sodio crea un ambiente menos favorable para el crecimiento bacteriano.</p>
+            <p>Su leve abrasividad es clave para remover las manchas superficiales de los dientes, revelando una sonrisa naturalmente m&aacute;s blanca con el uso regular. A diferencia de los blanqueadores qu&iacute;micos agresivos, el bicarbonato de sodio trabaja de forma gentil y segura, respetando la integridad de tu esmalte. Tambi&eacute;n es un desodorizante natural, combatiendo el mal aliento desde su origen.</p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-leaf"></i> Extracto de Menta: Frescura Duradera y Protecci&oacute;n Natural</h3>
+            <p><strong>Frescura y Acci&oacute;n Antis&eacute;ptica:</strong> El extracto de menta es mucho m&aacute;s que un simple saborizante en nuestra pasta dental. Obtenido de forma natural, proporciona esa explosi&oacute;n de frescura y limpieza que todos amamos en un dent&iacute;frico. Su aroma y sabor son estimulantes y dejan un aliento puro y duradero.</p>
+            <p>M&aacute;s all&aacute; de la frescura, la menta posee potentes propiedades antis&eacute;pticas y antibacterianas naturales. Ayuda eficazmente a combatir las bacterias que se acumulan en la boca, reduciendo la formaci&oacute;n de placa y previniendo el mal aliento. Es un aliado esencial para mantener una boca sana y protegida de forma natural.</p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-soap"></i> SCI (Sodium Cocoyl Isethionate): Espuma Suave y Biodegradable</h3>
+            <p><strong>Espuma Suave y Biodegradable:</strong> SCI es un tensioactivo derivado del coco que utilizamos para crear una espuma rica y cremosa, similar a la de las pastas de dientes convencionales, pero sin la agresividad de los sulfatos. Su funci&oacute;n principal es ayudar a que la pasta dental se distribuya uniformemente por toda la boca, llevando los ingredientes activos a cada rinc&oacute;n y asegurando una limpieza exhaustiva.</p>
+            <p>Lo m&aacute;s importante de SCI es su suavidad. Es extremadamente gentil con las enc&iacute;as y las mucosas orales, lo que lo hace ideal para personas con sensibilidad. Adem&aacute;s, es un ingrediente completamente biodegradable, lo que significa que se descompone de forma natural en el medio ambiente, aline&aacute;ndose con nuestro compromiso de sostenibilidad.</p>
+        </div>
+        <div class="feature-item">
+            <h3><i class="fas fa-grip-lines"></i> Goma Xantana: Textura Perfecta y Estabilidad Natural</h3>
+            <p><strong>Textura y Estabilidad:</strong> La goma xantana es un polisac&aacute;rido natural producido por la fermentaci&oacute;n de az&uacute;cares, utilizado ampliamente como espesante y estabilizador en productos alimenticios y cosm&eacute;ticos. En nuestra pasta dental, su papel es fundamental para dar al producto la consistencia adecuada, asegurando que no sea ni demasiado l&iacute;quida ni demasiado densa.</p>
+            <p>Adem&aacute;s de la textura, la goma xantana es vital para mantener todos los ingredientes mezclados de forma homog&eacute;nea, evitando que se separen con el tiempo. Esto garantiza que cada vez que uses Tooth-ies, recibas la dosis perfecta de todos nuestros ingredientes beneficiosos, contribuyendo a la eficacia general del producto. Es un componente seguro y de origen natural que mejora la experiencia de uso.</p>
+        </div>
+        <a href="#hero-section" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al Inicio</a>
+    </section>
+
+    <section class="page-content" id="beneficios-section">
+        <h2>Beneficios Inigualables de Usar Tooth-ies</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 40px; color: #555;">Elegir Tooth-ies significa elegir un futuro m&aacute;s brillante para tu sonrisa y para el planeta. Descubre las ventajas que te esperan con nuestro cuidado dental natural.</p>
+
+        <ul class="benefits-list">
+            <li class="benefit-item">
+                <strong><i class="fas fa-brush"></i> Limpieza Profunda y Natural sin Agresiones</strong>
+                <p>Nuestra f&oacute;rmula avanzada, basada en arcilla blanca y bicarbonato de sodio, trabaja en sinergia para remover eficazmente la placa bacteriana y las manchas superficiales, revelando la blancura natural de tus dientes. A diferencia de otros productos, lo logramos sin qu&iacute;micos abrasivos que puedan da&ntilde;ar tu esmalte o irritar tus enc&iacute;as, garantizando una limpieza suave pero potente cada d&iacute;a.</p>
+            </li>
+            <li class="benefit-item">
+                <strong><i class="fas fa-wind"></i> Aliento Fresco Duradero y Confianza Renovada</strong>
+                <p>Gracias a la alta concentraci&oacute;n de extracto puro de menta, cada cepillado con Tooth-ies te dejar&aacute; una sensaci&oacute;n de frescura intensa y prolongada. La menta no solo proporciona un sabor agradable, sino que tambi&eacute;n posee propiedades antis&eacute;pticas que combaten directamente las bacterias causantes del mal aliento, asegurando que disfrutes de una sensaci&oacute;n de limpieza y confianza durante m&aacute;s tiempo.</p>
+            </li>
+            <li class="benefit-item">
+                <strong><i class="fas fa-shield-alt"></i> Cuidado Suave y Protector para Enc&iacute;as Sensibles</strong>
+                <p>Hemos formulado meticulosamente nuestros productos para ser excepcionalmente gentiles, incluso con las enc&iacute;as m&aacute;s sensibles. El SCI, derivado del coco, crea una espuma suave que limpia sin causar irritaci&oacute;n, mientras que la pureza de nuestros ingredientes naturales minimiza el riesgo de reacciones adversas. Tooth-ies es la elecci&oacute;n ideal para quienes buscan un cuidado bucal efectivo sin sacrificar la comodidad.</p>
+            </li>
+            <li class="benefit-item">
+                <strong><i class="fas fa-certificate"></i> Ingredientes Seguros, Puros y Transparencia Total</strong>
+                <p>En Tooth-ies, la transparencia es clave. Sabes exactamente lo que pones en tu boca, ya que solo utilizamos ingredientes de origen natural cuidadosamente seleccionados. Estamos orgullosos de ser una alternativa libre de fl&uacute;or, sulfatos agresivos (como SLS), parabenos, colorantes artificiales y conservadores sint&eacute;ticos. Nuestra promesa es un producto limpio, seguro y efectivo en el que puedes confiar plenamente.</p>
+            </li>
+            <li class="benefit-item">
+                <strong><i class="fas fa-grin-beam"></i> Sonrisa Naturalmente M&aacute;s Brillante y Resplandeciente</strong>
+                <p>El uso regular de nuestra pasta dental ayuda a pulir suavemente la superficie del esmalte, eliminando las imperfecciones que opacan tu sonrisa. Con el tiempo, ver&aacute;s c&oacute;mo tus dientes recuperan su brillo natural y lucen m&aacute;s blancos, sin necesidad de agentes blanqueadores agresivos que puedan comprometer la salud dental a largo plazo.</p>
+            </li>
+            <li class="benefit-item">
+                <strong><i class="fas fa-globe-americas"></i> Amigable con el Planeta: Tu Elecci&oacute;n Eco-Consciente</strong>
+                <p>Nuestro compromiso va m&aacute;s all&aacute; de tu boca. Tooth-ies se enorgullece de utilizar ingredientes biodegradables y de priorizar empaques con conciencia ecol&oacute;gica, reduciendo as&iacute; nuestro impacto en el medio ambiente. Al elegir Tooth-ies, no solo est&aacute;s cuidando tu sonrisa, sino que tambi&eacute;n est&aacute;s contribuyendo a un planeta m&aacute;s sano. Cada compra es un paso hacia un futuro m&aacute;s sostenible.</p>
+            </li>
+        </ul>
+        <a href="#hero-section" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al Inicio</a>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h3><i class="fas fa-info-circle"></i> Con&oacute;cenos</h3>
+                <ul>
+                    <li><a href="#quienes-somos-section">Qui&eacute;nes Somos</a></li>
+                    <li><a href="#nuestra-historia">Nuestra Historia</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3><i class="fas fa-hands-helping"></i> Ayuda</h3>
+                <ul>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Cont&aacute;ctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3><i class="fas fa-gavel"></i> Legal</h3>
+                <ul>
+                    <li><a href="#politica-privacidad">Pol&iacute;tica de Privacidad</a></li>
+                    <li><a href="#terminos">T&eacute;rminos y Condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2025 Tooth-ies. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
