@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Descubre Nuestro Champú Revitalizante!</title>
+    <style>
+        /* Estilos CSS básicos para que la página se vea un poco mejor */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6; 
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        header {
+            background: #66bb6a; /* Un verde vibrante */
+            color: #fff;
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: #4caf50 3px solid;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .hero {
+            background: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .hero h2 {
+            color: #4caf50;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            background: #e8f5e9; /* Verde muy claro */
+        }
+        .feature-item {
+            background: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-basis: 30%; /* Ajusta el tamaño de cada columna */
+            min-width: 280px; /* Asegura que no sea demasiado pequeño en pantallas chicas */
+            text-align: center;
+        }
+        .feature-item h3 {
+            color: #66bb6a;
+            margin-bottom: 10px;
+        }
+        .how-to-use {
+            background: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .how-to-use h2 {
+            color: #4caf50;
+            margin-bottom: 25px;
+        }
+        /* Nuevo contenedor para los pasos y las imágenes */
+        .steps-with-images {
+            display: flex;
+            justify-content: space-between; /* ¡Cambiado a space-between! */
+            align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+            gap: 20px; /* Espacio entre los elementos */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            max-width: 1200px; /* Ancho máximo para el contenedor */
+            margin: 0 auto; /* Centra el contenedor */
+            padding: 0 20px; /* Añade un poco de padding horizontal para que las imágenes no toquen los bordes */
+        }
+        .steps-image {
+            flex-shrink: 0; /* Evita que las imágenes se encojan demasiado */
+            width: 250px; /* Ancho fijo para las imágenes en escritorio */
+            height: auto;
+            object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            align-self: center; /* Centra la imagen verticalmente con respecto a los pasos */
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1; /* Permite que los pasos ocupen el espacio restante */
+            max-width: 550px; /* ¡Aumentado el ancho máximo para los pasos! */
+        }
+        .step {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 15px 25px;
+            margin: 10px 0;
+            width: 100%; /* Ocupa todo el ancho disponible en su columna */
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .step strong {
+            color: #66bb6a;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) { /* Ajuste para tablets y pantallas medianas */
+            .steps-with-images {
+                flex-direction: column; /* Apila las imágenes y los pasos */
+                align-items: center; /* Centra los elementos apilados */
+                padding: 0 10px; /* Ajusta el padding para pantallas más pequeñas */
+            }
+            .steps-image {
+                width: 80%; /* Las imágenes ocupan más ancho en pantallas más pequeñas */
+                max-width: 300px; /* Pero no demasiado grandes */
+                margin-bottom: 20px; /* Espacio entre imagen y pasos */
+            }
+            .steps {
+                width: 90%; /* Los pasos ocupan más ancho */
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-item {
+                flex-basis: 90%;
+            }
+            .steps-image {
+                width: 90%;
+            }
+            .step {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Petalis</h1>
+	    <h2>"Dale a tu mascota el cuidado que merece"</h2>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>¿Quienes somos?</h2>
+            <p>Somos una empresa natural dedicada al cuidado de tu mascota por medio de productos que aportan a la limpieza de su pelaje.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <h3>Limpieza Profunda y Suave</h3>
+            <p>Elimina impurezas y residuos sin dañar la hidratación natural de su pelaje.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Nutrición Intensa</h3>
+            <p>Enriquecido con vitaminas y extractos botánicos que fortalecen cada hebra.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Brillo Radiante</h3>
+            <p>Devuelve a el pelaje de tu mascota su luminosidad natural, dejándolo visiblemente más sano.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Textura Sedosa</h3>
+            <p>Disfruta de un pelaje suave al tacto.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Aroma Fresco y Duradero</h3>
+            <p>Una fragancia revitalizante que acompañará a tu mascota durante todo el día.</p>
+        </div>
+    </section>
+
+    <section class="how-to-use">
+        <div class="container">
+            <h2>¿Cómo Usar Nuestro Champú para Mejores Resultados?</h2>
+            <div class="steps-with-images">
+                
+
+                <div class="steps">
+                    <div class="step">
+                        <p><strong>Paso 1: Moja Bien el Pelaje</strong><br>Asegúrate de que su pelaje esté completamente mojado antes de aplicar el champú.</p>
+                    </div>
+                    <div class="step">
+                        <p><strong>Paso 2: Aplica la Cantidad Justa</strong><br>Vierte una pequeña cantidad de champú en tus manos y distribúyelo uniformemente en todo su pelaje.</p>
+                    </div>
+                    <div class="step">
+                        <p><strong>Paso 3: Masajea Suavemente</strong><br>Masajea el cuero cabelludo de tu mascota con las yemas de tus dedos, creando una espuma abundante. Extiende hacia las puntas.</p>
+                    </div>
+                    <div class="step">
+                        <p><strong>Paso 4: Enjuaga a Fondo</strong><br>Aclara con abundante agua tibia hasta que no queden residuos de champú.</p>
+                    </div>
+                    <div class="step">
+                        <p><strong>Paso 5: ¡Disfruta!</strong><br>Siente la limpieza y suavidad. Para un cuidado óptimo, sigue con su acondicionador favorito.</p>
+                    </div>
+                </div>
+
+                
+<img src="ShAmarillo.jpg" alt="Imagen de uso del champú 2" class="steps-image">
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Petalis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MENTIN</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #000;
+    }
+
+    header {
+      background-color: #c2e8bf;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: black;
+      font-size: 4.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      padding: 2.5rem 2rem;
+      background-color: white;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sabias {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .sabias img {
+      width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-left: -60px;
+    }
+
+    .sabias-texto {
+      max-width: 650px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.9;
+      color: #000;
+      text-align: justify;
+    }
+
+    .productos .productos-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .producto {
+      width: 30%;
+      background-color: #e8f5e9;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .producto p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 0.8rem;
+      color: #000;
+    }
+
+    .recomendaciones {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.9;
+      color: #000;
+      text-align: justify;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .recomendaciones ul {
+      list-style: disc;
+      margin-left: 2rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: #c2e8bf;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1rem;
+      color: black;
+    }
+
+    .contacto {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .contacto div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contacto img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-sitemap {
+      display: block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .btn-sitemap:hover {
+      background-color: #1b5e20;
+    }
+
+    @media (max-width: 768px) {
+      .sabias {
+        flex-direction: column;
+        text-align: center;
+      }
+      .producto {
+        width: 100%;
+      }
+      .sabias img {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>MENTIN</header>
+
+  <!-- Botón al mapa del sitio -->
+  <a href="sitemap.html" class="btn-sitemap">Ver mapa del sitio</a>
+
+  <!-- INICIO -->
+  <section id="inicio" class="sabias">
+    <img src="https://scontent.fmex34-1.fna.fbcdn.net/v/t1.15752-9/508619942_1221884049632036_7718637989827216810_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=HhcJj_4AxHsQ7kNvwGA_6iM&_nc_oc=AdkzrzjsHww8nQnETZvt7vjabMl8x_z1zvNFi-DNxO6lmUmY8yRK-X-ZtkCdHftmr2IWQPks2SnNcViBHebeI7XP&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmex34-1.fna&oh=03_Q7cD2gFm3WsMkIVS8hTRjv6WQXY1wwfOAFf5u68-IYFxGpHIAA&oe=68815518" alt="Logo MENTIN">
+    <div class="sabias-texto">
+      <h2>¿Sabías que?</h2>
+      <p>
+        En Latinoamérica, 600 millones de personas sufren de caries. En MENTIN, una microempresa que vende pasta dental con ingredientes 100 % naturales, nos enfocamos en neutralizar caries, sarro y bacterias con nuestra nueva fórmula...
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="productos">
+    <h2>Productos</h2>
+    <div class="productos-grid">
+      <div class="producto">
+    <img src="mentin.jpg" >   
+<p>Pasta dental de menta 100ml-$80</p>
+      </div>       <div class="producto">
+  <img src="mentina.jpg">  <p>Pasta dental de menta 100% natural  - $80</p>
+      </div>
+          </div>
+  </section>
+
+  <!-- RECOMENDACIONES -->
+  <section id="recomendaciones" class="recomendaciones">
+    <h2>Recomendaciones para un cepillado correcto</h2>
+    <p>Para mantener una higiene bucal adecuada y prevenir enfermedades dentales, considera las siguientes recomendaciones:</p>
+    <ul>
+      <li>Cepíllate los dientes al menos dos veces al día...</li>
+      <li>Usa un cepillo de cerdas suaves...</li>
+      <li>Realiza movimientos circulares...</li>
+      <li>Cepilla también la lengua...</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="contacto">
+      <div><strong>Tel:</strong> 55 7149 9338</div>
+      <div><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> <span>MENTINMX</span></div>
+      <div><strong>Email:</strong> mentin@gmail.com</div>
+    </div>
+  </footer>
+
+</body>
+</html>
