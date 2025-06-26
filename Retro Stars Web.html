@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETRO STARS - ARE YOU READY TO PRESS START</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: 'Press Start 2P', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente retro para un toque gamer */
+            margin: 0;
+            padding: 0;
+            background-color: #e0ffe0; /* Verde claro */
+            color: #222; /* Texto oscuro para contraste */
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2e7d32; /* Verde más oscuro, como un clásico de videojuegos */
+            color: #00e0ff; /* Celeste brillante para el título principal */
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #1b5e20; /* Borde inferior para un efecto de bloque */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 3px;
+            text-transform: uppercase; /* Mayúsculas para un look más "gamer" */
+            text-shadow: 2px 2px #000; /* Sombra para efecto retro */
+        }
+        header p {
+            font-size: 1.3em;
+            margin-top: 0.8em;
+            font-weight: bold;
+            color: white; /* Mantener blanco para el subtítulo del header */
+        }
+        nav {
+            background-color: #43a047; /* Un verde vibrante */
+            padding: 0.8em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #00e0ff; /* Celeste brillante para los enlaces de navegación */
+            text-decoration: none;
+            padding: 0.9em 1.8em;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #66bb6a; /* Tono de verde al pasar el ratón */
+            border-radius: 4px;
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+            color: white; /* Cambiar a blanco al pasar el ratón para contraste */
+        }
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 2.5em auto;
+            background-color: white;
+            padding: 3em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            border: 2px solid #a5d6a7; /* Borde sutil del color del tema */
+        }
+        h1, h2, h3 {
+            color: #00a0ff; /* Celeste un poco más oscuro para los títulos de sección */
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        h2 {
+            font-size: 2.2em;
+            border-bottom: 3px solid #81c784; /* Línea suave bajo el título */
+            padding-bottom: 0.6em;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 1.6em;
+            color: #00a0ff; /* Celeste un poco más oscuro para subtítulos */
+        }
+        .section {
+            margin-bottom: 3.5em;
+            padding: 2em;
+            background-color: #ffffff;
+            border-left: 6px solid #43a047; /* Detalle de color en el lateral */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        .section p {
+            margin-bottom: 1.2em;
+            text-align: justify;
+            font-size: 1.1em;
+            color: #333; /* Mantener el color de texto general en un gris oscuro para legibilidad */
+        }
+        ul {
+            list-style-type: none; /* Quitamos los bullets por defecto */
+            padding: 0;
+            margin-left: 25px; /* Espacio para los nuevos bullets */
+        }
+        ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="%2300e0ff" points="6,0 12,12 0,12"/></svg>') no-repeat left center; /* Triángulo celeste como bullet personalizado */
+            background-size: 10px 10px;
+            padding-left: 25px;
+            margin-bottom: 1em;
+            font-size: 1.05em;
+            color: #333; /* Mantener el color de texto general en un gris oscuro para legibilidad */
+        }
+        ul li strong {
+            color: #00a0ff; /* Resaltar los nombres de los ingredientes/características en celeste */
+        }
+        .gallery {
+            display: grid; /* Usamos CSS Grid para un diseño de galería responsivo */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas, mínimo 250px */
+            gap: 20px; /* Espacio entre imágenes */
+            margin-top: 2em;
+            justify-items: center; /* Centrar imágenes en sus celdas */
+            align-items: center; /* Alinear verticalmente en sus celdas */
+        }
+        .gallery img {
+            width: 100%; /* Las imágenes ocupan todo el ancho de su columna */
+            max-width: 300px; /* Limitar el tamaño máximo de las imágenes para que no sean demasiado grandes */
+            height: auto;
+            border: 4px solid #43a047; /* Borde verde para las imágenes */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #2e7d32;
+            color: #00e0ff; /* Celeste para el texto del footer */
+            text-align: center;
+            padding: 1.8em 0;
+            margin-top: 3.5em;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #81c784, rgba(0, 0, 0, 0));
+            margin: 4em 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RETRO STARS</h1>
+        <p>ARE YOU READY TO PRESS START</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes-somos">Quiénes Somos</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#producto-caracteristicas">Producto y Características</a>
+        <a href="#galeria">Galería de Productos</a> </nav>
+
+    <div class="container">
+        <section id="inicio" class="section">
+            <h2>Inicio</h2>
+            <p>¡Bienvenido a la página oficial de nuestro **Champú natural RETRO STARS**! Inspirados en la era dorada de los videojuegos, hemos creado una fórmula única, basada en ingredientes orgánicos y sostenibles, que puede transformar la salud y el brillo de tu cabello. Estamos comprometidos con ofrecerte un producto que no solo cuida tu cabello, sino también el planeta, ¡listo para que cada día sea una nueva partida!</p>
+            <p>Explora nuestras secciones para conocer más sobre nuestra filosofía de juego, los poderosos ingredientes que utilizamos y todo lo que nuestro champú tiene para ofrecerte para que siempre estés en el **nivel máximo**.</p>
+        </section>
+
+        <hr>
+
+        <section id="quienes-somos" class="section">
+            <h2>Quiénes Somos</h2>
+            <p>Somos un equipo apasionado por la belleza, el bienestar natural y, sobre todo, por los **videojuegos retro**. En **RETRO STARS**, creemos que la naturaleza nos brinda todo lo necesario para cuidar nuestro cuerpo de manera efectiva y respetuosa, con un toque de nostalgia y diversión. Nuestra misión es desarrollar productos capilares de alta calidad que sean libres de químicos agresivos, sulfatos y parabenos, y que además sean amigables con el medio ambiente, ¡pensados especialmente para los jugadores que buscan una ventaja en su cuidado personal!</p>
+            <p>Fomentamos prácticas de comercio justo y la sostenibilidad para asegurar que cada botella de nuestro champú te dé un "power-up" no solo en tu cabello, sino también en el impacto positivo hacia un futuro más sostenible y ético. ¡Prepárate para la próxima misión con un cabello increíble!</p>
+        </section>
+
+        <hr>
+
+        <section id="ingredientes" class="section">
+            <h2>Ingredientes Principales</h2>
+            <p>Nuestra fórmula está cuidadosamente elaborada con una selección de ingredientes naturales, como los mejores tesoros escondidos en tus juegos favoritos, conocidos por sus beneficios capilares. Aquí te presentamos algunos de ellos, ¡cada uno un ítem valioso para tu cabello!:</p>
+            <ul>
+                <li>**Champú de Hombre (Player 1):** Aqua, Cocos Nucifera Oil, Cocobetaine, Glycerine, Xanthan Gum, Pigmento CI 77745 (tono violeta que puede asociarse con la magia o el misterio de los videojuegos), SCI, Hidroxietilcelulosa, Citrus Aurantium Sinensis Fiber, Mel (miel).</li>
+                <li>**Champú de Mujer (Player 2):** Aqua, Vanilla Planifolia Fruit Oil, Cocos Nucifera Oil, Fragaria Ananassa Fruit Extract (extracto de fresa, dulce y aromático), Glycerine, Pigmento CI 77745, Cocobetaine, SCI, Hidroxietilcelulosa.</li>
+            </ul>
+            <p>Cada ingrediente ha sido seleccionado por su pureza y su capacidad para mejorar la salud general de tu cabello, ¡como si subieras de nivel con cada aplicación!</p>
+        </section>
+
+        <hr>
+
+        <section id="producto-caracteristicas" class="section">
+            <h2>Producto y Características</h2>
+            <h3>Nuestro Champú RETRO STARS</h3>
+            <p>Descubre el poder de la naturaleza y la esencia retro en cada lavado con nuestro **Champú RETRO STARS**. Diseñado para todo tipo de cabello, desde el más seco al más graso, y especialmente formulado para quienes buscan una solución suave y efectiva para el cuidado capilar mientras celebran su pasión por los clásicos. ¡Es el compañero perfecto para tu rutina de juego!</p>
+
+            <h3>Características Destacadas:</h3>
+            <ul>
+                <li>**Fórmula 100% Natural:** Ingredientes de origen vegetal y mineral, como los "sprites" originales, puros y auténticos.</li>
+                <li>**Libre de Sulfatos, Parabenos y Siliconas:** Cuidado sin "bugs" ni químicos agresivos que dañen tu cabello.</li>
+                <li>**Aroma Fresco y Duradero:** Gracias a los aceites esenciales puros, ¡como la música de fondo de tu juego favorito!</li>
+                <li>**Hidratación Profunda:** Deja el cabello suave, brillante y manejable, ¡listo para cualquier batalla o desafío!</li>
+                <li>**Cuidado Especialmente para Proteger:** Respetamos a los animales y al medio ambiente, asegurando que tu juego sea justo para todos.</li>
+                <li>**Envase Reciclable:** Contribuimos a un futuro más verde, ¡cada reciclaje es un "high score" para el planeta!</li>
+            </ul>
+            <p>Con cada uso, notarás tu cabello más sano, fuerte y con un brillo natural inigualable. ¡Haz el cambio a lo natural, presiona "START" en tu rutina de cuidado capilar y siente la diferencia que te llevará al siguiente nivel!</p>
+        </section>
+
+        <hr>
+
+        <section id="galeria" class="section">
+            <h2>Galería de Productos</h2>
+            <p>¡Prepárate para ver de cerca a los campeones! Aquí te mostramos cómo lucen nuestras botellas de **Champú RETRO STARS**. Cada diseño está inspirado en la estética pixelada y vibrante de tus videojuegos favoritos. ¡Colecciona tus favoritos!</p>
+            <div class="gallery">
+                <img src="foto de shampoo H.jpg" alt="Champú Retro Stars para Hombre - Diseño Azul">
+                <img src="foto del shampoo M.jpg" alt="Champú Retro Stars para Mujer - Diseño Rosa">
+                </div>
+            <p>Cada botella es un tesoro para tu cabello y para tu colección. ¡Captura la tuya!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 RETRO STARS. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
